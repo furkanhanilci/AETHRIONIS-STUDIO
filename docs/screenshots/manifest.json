@@ -1,0 +1,128 @@
+{
+  "activity": {
+    "bytes": 123814,
+    "path": "/activity",
+    "sha256": "53a75cf7094c0467",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "agents": {
+    "bytes": 112007,
+    "path": "/agents",
+    "sha256": "667f5f1dd6fb6e17",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "dume-control": {
+    "bytes": 178933,
+    "path": "/dume?channel=control",
+    "sha256": "10cb1026fb6061ec",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "dume-mobile": {
+    "bytes": 92504,
+    "path": "/dume",
+    "sha256": "b8f90cc9e653d6c2",
+    "size": [
+      760,
+      900
+    ]
+  },
+  "dume-narrow": {
+    "bytes": 103718,
+    "path": "/dume",
+    "sha256": "038d3ab501b73b28",
+    "size": [
+      980,
+      900
+    ]
+  },
+  "dume-review": {
+    "bytes": 164473,
+    "path": "/dume?channel=review",
+    "sha256": "9dc371ceca6bd7be",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "home": {
+    "bytes": 113150,
+    "path": "/",
+    "sha256": "5e4f73503ca8293c",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "models": {
+    "bytes": 122235,
+    "path": "/models",
+    "sha256": "a61a3b80556819d9",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "research": {
+    "bytes": 85526,
+    "path": "/projects",
+    "sha256": "c0e93d0bb2acac64",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "wp-evidence": {
+    "bytes": 132071,
+    "path": "/dume/wp?id=WP-001&tab=evidence",
+    "sha256": "7d359e35c9b4a821",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "wp-gate": {
+    "bytes": 205201,
+    "path": "/dume/wp?id=WP-001&tab=gate",
+    "sha256": "73af712b9d90af6b",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "wp-history": {
+    "bytes": 128310,
+    "path": "/dume/wp?id=WP-001&tab=history",
+    "sha256": "f6726ca2ad5ea4a3",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "wp-list": {
+    "bytes": 125127,
+    "path": "/dume/wp",
+    "sha256": "cb6618204973261c",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "wp-specification": {
+    "bytes": 175845,
+    "path": "/dume/wp?id=WP-001&tab=specification",
+    "sha256": "a2b84e0cccd12d20",
+    "size": [
+      1672,
+      941
+    ]
+  }
+}

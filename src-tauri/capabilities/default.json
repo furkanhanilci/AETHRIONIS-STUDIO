@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The narrowest capability set the shell can run on. Studio reads its data over localhost HTTP; the window needs nothing from the operating system beyond being a window, and a capability granted because it might be useful later is a capability nobody remembers to remove.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging"
+  ]
+}

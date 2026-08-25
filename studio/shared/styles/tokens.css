@@ -1,0 +1,21 @@
+:root {
+  --bg-0: #070A0E;
+  --bg-1: #0A1016;
+  --surface-1: #0D141C;
+  --surface-2: #111A24;
+  --surface-3: #15212C;
+  --border-subtle: #1B2732;
+  --border-strong: #2A3A48;
+  --text-primary: #EEF2F5;
+  --text-secondary: #A7B2BC;
+  --text-muted: #707D88;
+  --aethrionis-red: #EF2E35;
+  --aethrionis-red-soft: #B91E28;
+  --dume-cyan: #28DDEB;
+  --dume-cyan-soft: #168E9E;
+  --success: #35D08B;
+  --warning: #E7A93D;
+  --failure: #F05252;
+  --info: #58A6FF;
+  --review: #A77BF3;
+}

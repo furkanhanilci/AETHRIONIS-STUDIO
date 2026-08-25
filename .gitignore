@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Build output. Rust and node both write here constantly, and a build running
+# during a commit races the index — `git add` stats a file cargo has already
+# replaced and the commit aborts. That is how this rule was found.
+target/
+node_modules/
+dist/
+.sysroot/
+
+# The deployment's credentials: relay private key, database password, S3 keys,
+# the git hook HMAC. Eight of them. The compose file is ours and belongs here;
+# what it reads does not. .env.example is the shape without the values.
+deploy/compose/.env
+app/src-tauri/target/
+src-tauri/target/
+deploy/relay-image/buzz-relay

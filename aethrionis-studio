@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# AETHRIONIS Studio launcher.
+#
+# A wrapper rather than the binary directly, because the desktop entry has to
+# set an environment variable and `Exec=env VAR=x /path/binary` is not portable:
+# some launchers pass the whole line to a shell, some exec argv[0] directly, and
+# the ones that do the latter try to run a program called `env` with a `VAR=x`
+# argument and fail silently. Clicking the icon did nothing at all.
+#
+# WEBKIT_DMABUF_RENDERER_FORCE_SHM: WebKitGTK's dmabuf path segfaults on this
+# host's driver. The application checks this at startup and says so; forcing
+# shared memory is what upstream recommends over disabling the renderer.
+set -euo pipefail
+export WEBKIT_DMABUF_RENDERER_FORCE_SHM=1
+
+# Where other devices can reach the relay. Derived at launch rather than
+# written down: a written address goes stale the first time DHCP hands out a
+# different lease, and nobody notices until somebody tries to pair a phone.
+BUZZ_RELAY_URL="$(python3 -c "
+import sys; sys.path.insert(0, '/home/otonom/Desktop/FH/DUM-E')
+from dume.collaboration.host import relay_ws; print(relay_ws())" 2>/dev/null)"
+[ -n "$BUZZ_RELAY_URL" ] && export BUZZ_RELAY_URL
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# The gateway serves DUM-E's state and the membership flow. Started here if it
+# is not already up, so opening the application from the menu does not require
+# remembering to start something else first.
+if ! curl -fsS --max-time 2 http://127.0.0.1:8100/api/relay >/dev/null 2>&1; then
+  ( cd "$HERE" && setsid nohup python3 -m studio.app \
+      >"$HERE/gateway.log" 2>&1 </dev/null & ) || true
+  for _ in $(seq 1 30); do
+    curl -fsS --max-time 1 http://127.0.0.1:8100/api/relay >/dev/null 2>&1 && break
+    sleep 0.2
+  done
+fi
+
+exec "$HERE/app/src-tauri/target/release/aethrionis-studio" "$@"

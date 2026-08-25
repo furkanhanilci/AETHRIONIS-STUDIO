@@ -1,0 +1,20 @@
+[package]
+name = "aethrionis-studio"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77"
+description = "AETHRIONIS Studio desktop shell"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+
+[profile.release]
+# A desktop shell that only hosts a window does not need the compile time a
+# fat LTO build costs, and the binary size difference is not what makes this
+# application heavy.
+opt-level = "s"
+lto = "thin"
+strip = true

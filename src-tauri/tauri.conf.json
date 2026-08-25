@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AETHRIONIS Studio",
+  "version": "0.1.0",
+  "identifier": "org.aethrionis.studio",
+  "build": {
+    "frontendDist": "http://127.0.0.1:8100",
+    "devUrl": "http://127.0.0.1:8100",
+    "beforeBuildCommand": "",
+    "beforeDevCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "AETHRIONIS Studio",
+        "width": 1672,
+        "height": 941,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "theme": "Dark",
+        "label": "main"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'none'; img-src 'self' http://127.0.0.1:8100; style-src 'self' http://127.0.0.1:8100; connect-src http://127.0.0.1:8100; form-action http://127.0.0.1:8100",
+      "capabilities": [
+        "default"
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "deb",
+      "appimage"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.png"
+    ],
+    "category": "DeveloperTool",
+    "shortDescription": "The permanent work environment for AETHRIONIS",
+    "longDescription": "AETHRIONIS Studio. DUM-E is its first System Workspace."
+  }
+}

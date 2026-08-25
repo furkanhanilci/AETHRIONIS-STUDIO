@@ -1,0 +1,21 @@
+AETHRION Studio
+Copyright 2026 the AETHRION project
+
+This product contains a fork of Buzz.
+
+  Buzz — https://github.com/block/buzz
+  Copyright Block, Inc. and the Buzz contributors
+  Licensed under the Apache License, Version 2.0
+  Forked at commit 0720f5380ce8a6c050afac159f8462c06cd51ab5
+
+The forked source lives under app/ and retains its Apache-2.0 licence; a copy
+is at LICENSE-APACHE-2.0-buzz. Upstream publishes no NOTICE file of its own,
+so nothing further is required to be reproduced here beyond this attribution.
+
+What the fork changes, and why, is recorded in docs/BUZZ_FORK.md. The short
+version: Buzz is a collaboration client, and AETHRION needs one. What AETHRION
+additionally needs — that a message carries a declared type, that nothing said
+in a channel can constitute a review, a verification or an acceptance — Buzz
+does not have and was never trying to have. Those are added on top rather than
+retrofitted into Buzz's own model, so that the fork can still take upstream
+changes.
